@@ -1,0 +1,14 @@
+{
+  "save_dir": "static2",
+  "model": {
+    "name": "bicubic",
+    "params": {}
+  },
+  "scale": 1,
+  "train_set": "91-image",
+  "val_set": "face",
+  "test_sets": ["face"],
+  "lr_sub_size": 11,
+  "lr_sub_stride": 5,
+  "epochs": 1
+}

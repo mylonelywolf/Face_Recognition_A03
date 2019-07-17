@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+
+<style>
+    div{
+        width:200px;
+        height:200px;
+        background-color:purple;
+    }
+</style>
+
+<body bgcolor="#ffff66">
+<h1>我是首页</h1>
+{# 变量或对象的获取  {{ }}  #}
+欢迎光临：{{ username }}<br>
+
+条件判断<br>
+
+{% if username %}
+    {{ username }}
+{% else %}
+    用户名不存在
+{% endif %}
+
+获取列表
+列表是：{{ users }}
+<table border="1">
+    <thead>
+    <tr><th>用户名</th></tr>
+    {% for user in users %}
+    <tr><td>{{user}}</td></tr>
+    {% endfor %}
+    </thead>
+ </table>
+
+
+
+<img src="{{ url_for('static',filename='img/test.jpg') }}" width="100%">
+
+<div style="background-color:blue; height:100px;"></div>
+
+</body>
+</html>

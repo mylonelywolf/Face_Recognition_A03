@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+	        {
+		        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		        {
+			        document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		        }
+	        }
+            xmlhttp.open("GET","localhost:5000/original",true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body background=""style="background-repeat: repeat;background-position: center center;background-attachment: fixed;">
+<div id="myDiv"><center><h2>图像优化中,请稍等......请勿重复点击！</h2></center></div>
+<button type="button" onclick="loadXMLDoc()">刷新</button>
+<center><img src="{{url_for('static',filename='img/clarify.jpg')}}" width="1398" height="595"></center>
+</body>
+</html>
